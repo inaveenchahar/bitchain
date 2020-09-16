@@ -1,0 +1,30 @@
+tr:nth-child(odd){
+    background-color: white;
+    color: black;
+}
+
+
+
+tr:nth-child(even){
+    background-color: forestgreen;
+    color: white;
+}
+
+tr:hover{
+    background-color: black;
+    color: white;
+}
+
+table{
+    font-family: Arial;
+}
+
+.news-heading{
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 50px;
+}
+.card{
+    margin-bottom: 10px;
+}

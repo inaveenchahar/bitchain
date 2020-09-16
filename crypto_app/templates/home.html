@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome, to CRYPTO NEWS network!</h1>
+        <p class="lead">Your source for up to minute top 13 crypto currencies and block chain news</p>
+        <hr class="my-4">
+    </div>
+
+
+    <table class="table table-bordered table-responsive-md">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price(USD)</th>
+                <th>Price(INR)</th>
+                <th>Daily High</th>
+                <th>Daily Low</th>
+                <th>Market Cap(USD)</th>
+                <th>Market Cap(INR)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in price.DISPLAY.items %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value.USD.PRICE }}</td>
+                    <td>{{ value.INR.PRICE }}</td>
+                    <td>{{ value.USD.HIGHDAY }}</td>
+                    <td>{{ value.USD.LOWDAY }}</td>
+                    <td>{{ value.USD.MKTCAP }}</td>
+                    <td>{{ value.INR.MKTCAP }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1 class="news-heading">News & Articles</h1>
+    <div class="row">
+        {% for x in api.Data %}
+            <div class="col-lg-4 col-md-4 col-sm-10 col-12 offset-lg-0 offset-md-0 offset-sm-1  offset-0">
+                <div class="card" style="margin-bottom: 20px; margin-left: 10px; margin-right: 10px">
+                    <img style="height: 220px" src="{{ x.imageurl }}" class="card-img-top embed-responsive" alt="{{ x.source }}">
+                    <div class="card-body embed-responsive" style="padding: 20px">
+                        <h5 class="card-title">{{ x.title }}</h5>
+                        <p class="card-text">{{ x.body | truncatewords:30 }}</p>
+                        <a href="{{ x.url }}" class="btn btn-primary">Read more...</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+{% endblock content %}
