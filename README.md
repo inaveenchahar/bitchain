@@ -22,7 +22,7 @@ Contains two directories:
 ## Step1:
 Open the terminal in the directory where you want to download/clone the project. Run
 ``` 
-git clone https://gitlab.com/alwayz/Serefe.git
+git clone https://github.com/inaveenchahar/bitchain.git
 ```
 
 # GUIDE TO USE THE PROJECT
