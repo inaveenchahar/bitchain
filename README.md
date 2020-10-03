@@ -38,7 +38,7 @@ source env/bin/activate
 ```
 ## Step2: Change into project directory 
 ``` 
-cd Serefe
+cd bitchain
 ```
 
 ## Step3: Set up the system requirements
